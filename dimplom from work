@@ -1,0 +1,8 @@
+public function delete(int $habitId, int $userId): bool
+{
+    $query = $this->builder()
+        ->where('id', $habitId)
+        ->where('user_id', $userId);
+
+    return (bool) $query->delete();
+}
